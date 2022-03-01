@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "strict": false,
+    "module": "ESNext",
+    "target": "es2018",
+    "lib": ["DOM", "DOM.Iterable", "esnext"],
+    "allowJs": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "outDir": "dist",
+  },
+  "include": ["src", "example"],
+  "exclude": ["node_modules", "@pixi"]
+}

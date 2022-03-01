@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+h2 {
+  margin-bottom: 12px;
+}
+body {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19px;
+  color: #919bac;
+  background-color: #272d37;
+  padding-bottom: 64px;
+}
+.page-title {
+  margin-top: 42px;
+  text-align: center;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+
+}
+
+#playground{
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.demo {
+  margin-top: 32px;
+  width: 800px;
+}
+
+.CodeMirror {
+  height: 340px;
+  border: 1px solid #444 !important;
+}
+
+#presetBox {
+  width: 800px;
+}
+
+#presetBox button {
+  padding: 4px 8px;
+  line-height: 1.499;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  background-image: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  user-select: none;
+  touch-action: manipulation;
+  height: 32px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid rgb(53, 62, 80);
+  color: #fff;
+  background-color: rgb(44, 51, 64);
+  text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+  box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
+  margin-right: 8px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+#presetBox button:hover {
+  background-color: rgb(30, 37, 52);
+}
+
+#presetBox button:active {
+  background-color: rgb(9, 12, 17);
+}
+
+.list-title {
+  margin-top: 32px;
+  text-transform: uppercase;
+}

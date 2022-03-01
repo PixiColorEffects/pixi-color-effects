@@ -1,0 +1,26 @@
+name: pagePublic
+on:
+  push:
+    branches:
+      - main
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install
+      - run: npm run buildPage
+      - run: npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./page
+          EXTERNAL_REPOSITORY: PixiColorEffects/PixiColorEffects.github.io
+          PUBLISH_BRANCH: main
+          keep_files: false

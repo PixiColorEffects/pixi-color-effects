@@ -1,0 +1,12 @@
+.github
+example
+node_modules
+src
+index.html
+.gitignore
+.npmignore
+tsconfig.json
+vite.config.js
+yarn.lock
+public
+

@@ -1,0 +1,45 @@
+{
+  "name": "pixi-color-effects",
+  "version": "1.0.3",
+  "description": "A various color Matrix filters and Presets for pixi.js",
+  "main": "./dist/git.umd.js",
+  "module": "./dist/pixi-color-effects.es.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PixiColorEffects/pixi-color-effects.git"
+  },
+  "homepage": "https://github.com/PixiColorEffects/pixi-color-effects#readme",
+  "bugs": {
+    "url": "https://github.com/PixiColorEffects/pixi-color-effects/issues"
+  },
+  "scripts": {
+    "serve": "vite",
+    "build": "vite build && tsc -p ./tsconfig.dist.json -emitDeclarationOnly && tsc-alias -p ./tsconfig.dist.json",
+    "buildPage": "vite build --config vite.config.page.ts",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "pixijs",
+    "effects",
+    "filters"
+  ],
+  "author": "carl-jin",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "@types/pixi.js": "^5.0.0",
+    "lil-gui": "^0.16.1",
+    "prettier": "^2.5.1",
+    "tsc-alias": "^1.6.3",
+    "typescript": "^4.6.2",
+    "vite": "^2.8.4",
+    "vite-plugin-string": "^1.1.2"
+  },
+  "dependencies": {
+    "pixi.js": "^6.2.2"
+  }
+}

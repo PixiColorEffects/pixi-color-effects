@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>PixiColorFilters</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css"
+    />
+    <script src="./example/index.ts" type="module"></script>
+  </head>
+  <body>
+    <h1 class="page-title">PixiColorFilters</h1>
+    <div class="center">
+      <canvas id="playground"></canvas>
+
+      <h1 style="margin-top: 24px">Preset</h1>
+      <div id="presetBox"></div>
+
+      <div class="demo">
+        <h2>Example Code</h2>
+        <textarea id="code">
+import { Tint, Preset } from "pixi-color-effects";
+
+const app = new Application({
+  // **
+});
+
+let filter = new Tint();
+app.stage.filters = [filter];
+
+//  use Preset
+filter = new Preset("aladin");
+
+//  change value
+let num = 0;
+app.ticker.add((delta) => {
+  num += 0.1;
+  filter.value = Math.sin(num) * 1;
+});
+        </textarea>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        theme: "dracula",
+      });
+    </script>
+  </body>
+</html>
