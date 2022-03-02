@@ -5,7 +5,7 @@ import path from "path";
  * @type {import('vite').UserConfig}
  */
 const config = {
-  base: "/pixi-color-effects/",
+  base: "/",
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),

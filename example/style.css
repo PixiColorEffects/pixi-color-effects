@@ -24,14 +24,62 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 24px;
-
 }
 
-#playground{
+.playground-box {
   position: sticky;
   top: 0;
   left: 0;
   z-index: 999;
+  display: flex;
+  flex-direction: column;
+}
+
+.controls-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: rgb(44, 51, 64);
+  width: 100%;
+  border-radius: 0 0 4px 4px;
+  border: 1px solid rgb(53, 62, 80);
+  border-top: 0;
+  height: 24px;
+}
+
+#upload {
+  cursor: pointer;
+  padding: 0 4px;
+  color: #fff;
+  display: block;
+}
+
+#webcam {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0 4px;
+  color: #fff;
+  margin-left: 24px;
+}
+
+#upload:hover,
+#webcam:hover {
+  background: rgb(30, 37, 52);
+}
+
+#upload:active,
+#webcam:active {
+  background: rgb(9, 12, 17);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
 }
 
 .demo {

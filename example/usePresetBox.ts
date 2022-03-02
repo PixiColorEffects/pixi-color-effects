@@ -102,7 +102,7 @@ const group = {
   nature: ["beach", "flower", "forest"],
 };
 
-export function presetBox(app: Application, gui: any) {
+export function usePresetBox(app: Application, gui: any) {
   let html = ``;
   Object.keys(group).map((key) => {
     html += `<div class="list"><h2 class="list-title">${key}</h2>`;

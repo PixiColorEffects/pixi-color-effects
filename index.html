@@ -21,7 +21,20 @@
   <body>
     <h1 class="page-title">PixiColorEffects</h1>
     <div class="center">
-      <canvas id="playground"></canvas>
+      <div class="playground-box">
+        <canvas id="playground"></canvas>
+
+        <div class="controls-box">
+          <label for="fileElem" id="upload">Upload an Img </label>
+          <button id="webcam">Use Webcam</button>
+        </div>
+        <input
+          type="file"
+          id="fileElem"
+          accept="image/*"
+          class="visually-hidden"
+        />
+      </div>
 
       <h1 style="margin-top: 24px">Preset</h1>
       <div id="presetBox"></div>

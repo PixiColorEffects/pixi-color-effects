@@ -2,7 +2,7 @@ import { filters } from "@/filters";
 import GUI from "lil-gui";
 import { Application } from "pixi.js";
 
-export function guiControlsPanel(app: Application) {
+export function useGuiControlsPanel(app: Application) {
   //  gen controls panel
   const gui = new GUI();
 

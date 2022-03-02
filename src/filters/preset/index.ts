@@ -64,7 +64,6 @@ export class Preset extends Filter {
         }
       }
 
-      console.log(f.name);
       //  @ts-ignore
       return new filters[f.name](f.value);
     });

@@ -1,7 +1,9 @@
 import "./style.css";
 import { Application, Sprite } from "pixi.js";
-import { guiControlsPanel } from "./guiControlsPanel";
-import { presetBox } from "./presetBox";
+import { useGuiControlsPanel } from "./useGuiControlsPanel";
+import { usePresetBox } from "./usePresetBox";
+import { useUploadFile } from "./useUploadFile";
+import { useWebcam } from "./useWebcam";
 
 const app = new Application({
   view: document.getElementById("playground") as HTMLCanvasElement,
@@ -15,5 +17,7 @@ app.stage.addChild(sprite);
 
 app.stage.filters = [];
 
-const gui = guiControlsPanel(app);
-presetBox(app, gui);
+const gui = useGuiControlsPanel(app);
+usePresetBox(app, gui);
+useUploadFile(app, gui);
+useWebcam(app, gui);
