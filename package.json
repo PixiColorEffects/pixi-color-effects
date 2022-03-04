@@ -32,6 +32,7 @@
   "devDependencies": {
     "@types/node": "^17.0.21",
     "@types/pixi.js": "^5.0.0",
+    "fhead": "^3.2.7",
     "lil-gui": "^0.16.1",
     "prettier": "^2.5.1",
     "tsc-alias": "^1.6.3",
@@ -41,5 +42,20 @@
   },
   "dependencies": {
     "pixi.js": "^6.2.2"
+  },
+  "fhead": {
+    "comment": "/** Do not use this config in production! */",
+    "root": "dist",
+    "repository": "https://github.com/PixiColorEffects/pixi-color-effects.git",
+    "patterns": [
+      ".js"
+    ],
+    "exclude": [],
+    "name": "CarlJin",
+    "email": "buffpal2016@gmail.com",
+    "license": "MIT",
+    "licenseText": "pixi-color-effects is licensed under the MIT License.",
+    "copyright": "https://github.com/PixiColorEffects/pixi-color-effects/blob/main/LICENSE",
+    "renewAll": true
   }
 }
