@@ -2,6 +2,8 @@
 
 A various color Matrix filters for pixi.js with TON of presets!
 
+[DEMO](https://pixicoloreffects.github.io/)
+
 ![img](./screenshot.png)
 
 # Install
