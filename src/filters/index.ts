@@ -50,6 +50,8 @@ export * from "./fill/index";
 
 export * from "./preset/index";
 
+export * from './preset/preset'
+
 export const filters = {
   vibrance: Vibrance,
   saturation: Saturation,

@@ -1,6 +1,6 @@
 {
   "name": "pixi-color-effects",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A various color Matrix filters and Presets for pixi.js",
   "main": "./dist/pixi-color-effects.umd.js",
   "module": "./dist/pixi-color-effects.es.js",
