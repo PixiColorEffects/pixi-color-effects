@@ -12,7 +12,7 @@ import { LevelMapping } from "@/tools/level";
 import { Levels } from "@/filters/levels";
 
 export class Preset extends Filter {
-  private filtersArr: Array<typeof filters> = [];
+  private filtersArr: Filter[] = [];
   constructor(preset: PresetKey) {
     super(null, null);
 
@@ -76,37 +76,40 @@ export class Preset extends Filter {
     clearMode?: CLEAR_MODES,
     _currentState?: FilterState
   ) {
-    //  reference
-    /*
-    let rt = filterManager.getFilterTexture();
-    this.filtersArr[0].apply(filterManager, input, rt, 0);
+    //  https://github.com/pixijs/pixijs/discussions/8405
+    const baseTexture = filterManager.getFilterTexture();
+    const texturesArr = [baseTexture];
 
-    let rt2 = filterManager.getFilterTexture();
-    this.filtersArr[1].apply(filterManager, rt, rt2, 0);
-    let rt3 = filterManager.getFilterTexture();
-    this.filtersArr[2].apply(filterManager, rt2, rt3, 0);
-    this.filtersArr[3].apply(filterManager, rt3, output, 0);
-    */
-
-    let textObj: Record<string, any> = {};
     for (let i = 0; i < this.filtersArr.length; i++) {
       if (i === 0) {
-        if (this.filtersArr.length === 1) {
-          //  @ts-ignore
-          this.filtersArr[i].apply(filterManager, input, output, 0);
-        } else {
-          textObj[i] = filterManager.getFilterTexture();
-          //  @ts-ignore
-          this.filtersArr[i].apply(filterManager, input, textObj[i], 0);
-        }
-      } else if (i === this.filtersArr.length - 1) {
-        //  @ts-ignore
-        this.filtersArr[i].apply(filterManager, textObj[i - 1], output, 0);
+        this.filtersArr[i].apply(
+            filterManager,
+            input,
+            baseTexture,
+            1,
+            _currentState
+        );
       } else {
-        textObj[i] = filterManager.getFilterTexture();
-        //  @ts-ignore
-        this.filtersArr[i].apply(filterManager, textObj[i - 1], textObj[i], 0);
+        const stackTexture = filterManager.getFilterTexture();
+        texturesArr.push(stackTexture);
+        this.filtersArr[i].apply(
+            filterManager,
+            texturesArr[i - 1],
+            stackTexture,
+            1
+        );
       }
     }
+
+    filterManager.applyFilter(
+        this,
+        texturesArr[texturesArr.length - 1],
+        output,
+        clearMode
+    );
+
+    texturesArr.reverse().map((t) => {
+      filterManager.returnFilterTexture(t);
+    });
   }
 }
