@@ -31,17 +31,21 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^17.0.21",
-    "@types/pixi.js": "^5.0.0",
     "fhead": "^3.2.7",
     "lil-gui": "^0.16.1",
+    "pixi.js": "^6.2.2",
     "prettier": "^2.5.1",
     "tsc-alias": "^1.6.3",
     "typescript": "^4.6.2",
     "vite": "^2.8.4",
     "vite-plugin-string": "^1.1.2"
   },
-  "dependencies": {
-    "pixi.js": "^6.2.2"
+  "peerDependencies": {
+    "@pixi/constants": "^6.2.2",
+    "@pixi/core": "^6.2.2",
+    "@pixi/filter-blur": "^6.2.2",
+    "@pixi/filter-color-matrix": "^6.2.2",
+    "@pixi/utils": "^6.2.2"
   },
   "fhead": {
     "comment": "/** Do not use this config in production! */",

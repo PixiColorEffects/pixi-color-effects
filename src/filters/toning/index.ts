@@ -1,6 +1,7 @@
 //  @ts-ignore
 import fragment from "./fragment.frag";
-import { Filter, utils, Texture } from "pixi.js";
+import { Filter, Texture } from "@pixi/core";
+import { hex2rgb, string2hex } from "@pixi/utils";
 
 export class Toning extends Filter {
   private _imageData: ImageData;
@@ -20,9 +21,9 @@ export class Toning extends Filter {
 
   public update() {
     //  https://github.com/pixijs/pixijs/issues/5484#issuecomment-470022698
-    const [r, g, b] = utils.hex2rgb(utils.string2hex(this.uniforms.lightColor));
-    const [rDark, gDark, bDark] = utils.hex2rgb(
-      utils.string2hex(this.uniforms.darkColor)
+    const [r, g, b] = hex2rgb(string2hex(this.uniforms.lightColor));
+    const [rDark, gDark, bDark] = hex2rgb(
+      string2hex(this.uniforms.darkColor)
     );
 
     let paletteMap = this._imageData;

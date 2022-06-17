@@ -1,11 +1,11 @@
 import {
-  CLEAR_MODES,
   Filter,
-  filters,
   FilterState,
   FilterSystem,
   RenderTexture,
-} from "pixi.js";
+} from "@pixi/core";
+import { CLEAR_MODES } from '@pixi/constants';
+import { BlurFilter } from '@pixi/filter-blur';
 
 export class Blur extends Filter {
   private _blurFilter: any;
@@ -13,7 +13,7 @@ export class Blur extends Filter {
   constructor(value: number = 0) {
     super(null, null);
 
-    this._blurFilter = new filters.BlurFilter();
+    this._blurFilter = new BlurFilter();
     this.value = value;
   }
 

@@ -2,9 +2,9 @@ import {
   Filter,
   FilterSystem,
   RenderTexture,
-  CLEAR_MODES,
   FilterState,
-} from "pixi.js";
+} from "@pixi/core";
+import { CLEAR_MODES } from "@pixi/constants";
 import { filters } from "../index";
 import { PresetKey, presetConfig } from "./preset";
 import { Curves } from "@/filters/curves";
