@@ -1,6 +1,6 @@
 //  @ts-ignore
 import fragment from "./fragment.frag";
-import { Filter } from "pixi.js";
+import { Filter } from "@pixi/core";
 
 export class White extends Filter {
   constructor(value: number = 0) {

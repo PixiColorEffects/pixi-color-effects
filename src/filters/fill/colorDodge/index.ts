@@ -1,6 +1,7 @@
 //  @ts-ignore
 import fragment from "./fragment.frag";
-import { Filter, Texture, utils } from "pixi.js";
+import { Filter } from "@pixi/core";
+import { hex2rgb, string2hex } from "@pixi/utils";
 
 export class ColorDodge extends Filter {
   constructor(value: number = 0, fillColor: string = "#f20") {
@@ -11,7 +12,7 @@ export class ColorDodge extends Filter {
   }
 
   public update() {
-    const [r, g, b] = utils.hex2rgb(utils.string2hex(this.uniforms.fillColor));
+    const [r, g, b] = hex2rgb(string2hex(this.uniforms.fillColor));
     this.uniforms.color = [r, g, b, 1];
   }
 

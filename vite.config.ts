@@ -1,6 +1,14 @@
 import vitePluginString from "vite-plugin-string";
 import path from "path";
 
+const globals = {
+  "@pixi/constants": "PIXI",
+  "@pixi/core": "PIXI",
+  "@pixi/filter-color-matrix": "PIXI.filters",
+  "@pixi/filter-blur": "PIXI.filters",
+  "@pixi/utils": "PIXI.utils"
+};
+
 /**
  * @type {import('vite').UserConfig}
  */
@@ -14,7 +22,10 @@ const config = {
     },
     minify: true,
     rollupOptions: {
-      external: ["pixi.js"],
+      external: Object.keys(globals),
+      output: {
+        globals,
+      },
     },
   },
   resolve: {

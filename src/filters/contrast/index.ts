@@ -2,10 +2,9 @@ import {
   Filter,
   FilterSystem,
   RenderTexture,
-  CLEAR_MODES,
   FilterState,
-  filters,
-} from "pixi.js";
+} from "@pixi/core";
+import { CLEAR_MODES } from "@pixi/constants";
 import { ColorMatrixFilter } from "@pixi/filter-color-matrix";
 
 export class Contrast extends Filter {
@@ -13,7 +12,7 @@ export class Contrast extends Filter {
   constructor(value: number = 0) {
     super(null, null);
 
-    this._colorMatrixFilter = new filters.ColorMatrixFilter();
+    this._colorMatrixFilter = new ColorMatrixFilter();
     this.value = value;
   }
 

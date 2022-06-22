@@ -1,13 +1,12 @@
 //  @ts-nocheck
 import {
   Filter,
-  utils,
-  Texture,
   FilterSystem,
   RenderTexture,
   CLEAR_MODES,
   FilterState,
-} from "pixi.js";
+} from "@pixi/core";
+import { CLEAR_MODES } from "@pixi/constants";
 import { Mapping } from "@/filters/mapping";
 import { LevelMapping } from "@/tools/level";
 

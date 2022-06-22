@@ -1,11 +1,10 @@
 import {
-  CLEAR_MODES,
   Filter,
-  filters,
   FilterState,
   FilterSystem,
   RenderTexture,
-} from "pixi.js";
+} from "@pixi/core";
+import { CLEAR_MODES } from "@pixi/constants";
 import { SoftLight } from "@/filters/fill/softLight";
 import { HardLight } from "@/filters/fill/hardLight";
 import { VividLight } from "@/filters/fill/vividLight";

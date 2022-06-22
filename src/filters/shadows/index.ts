@@ -1,6 +1,6 @@
 //  @ts-ignore
 import fragment from "../highlights/fragment.frag";
-import { Filter } from "pixi.js";
+import { Filter } from "@pixi/core";
 
 export class Shadows extends Filter {
   constructor(value: number = 0) {

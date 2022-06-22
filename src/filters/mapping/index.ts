@@ -1,6 +1,6 @@
 //  @ts-ignore
 import fragment from "./fragment.frag";
-import { Filter, Texture } from "pixi.js";
+import { Filter, Texture } from "@pixi/core";
 
 export class Mapping extends Filter {
   constructor(paletteMap: ImageData) {

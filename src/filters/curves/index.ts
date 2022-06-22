@@ -1,13 +1,11 @@
 //  @ts-nocheck
 import {
   Filter,
-  utils,
-  Texture,
   FilterSystem,
   RenderTexture,
-  CLEAR_MODES,
   FilterState,
-} from "pixi.js";
+} from "@pixi/core";
+import { CLEAR_MODES } from "@pixi/constants";
 import { CanvasSQ } from "@/tools/CanvasSQ";
 import { interpolate } from "@/tools/interpolate";
 import { Mapping } from "@/filters/mapping";
