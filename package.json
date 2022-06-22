@@ -1,6 +1,6 @@
 {
   "name": "pixi-color-effects",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A various color Matrix filters and Presets for pixi.js",
   "main": "./dist/pixi-color-effects.umd.js",
   "module": "./dist/pixi-color-effects.es.js",
@@ -20,7 +20,8 @@
     "serve": "vite",
     "build": "vite build && tsc -p ./tsconfig.dist.json -emitDeclarationOnly && tsc-alias -p ./tsconfig.dist.json",
     "buildPage": "vite build --config vite.config.page.ts",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tag": "bump --commit --tag --push"
   },
   "keywords": [
     "pixijs",
@@ -30,6 +31,7 @@
   "author": "carl-jin",
   "license": "MIT",
   "devDependencies": {
+    "@jsdevtools/version-bump-prompt": "^6.1.0",
     "@types/node": "^17.0.21",
     "fhead": "^3.2.7",
     "lil-gui": "^0.16.1",
