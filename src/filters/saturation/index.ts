@@ -6,11 +6,14 @@ import {
 } from "@pixi/core";
 import { CLEAR_MODES } from "@pixi/constants";
 import { ColorMatrixFilter } from "@pixi/filter-color-matrix";
+import { ColorEffectsFilter } from "@/filters/ColorEffectsFilter";
 
-export class Saturation extends Filter {
+export class Saturation extends ColorEffectsFilter {
   private _colorMatrixFilter: ColorMatrixFilter;
   constructor(value: number = 0) {
     super(null, null);
+    this.effectName = "saturation";
+    this.effectType = "filter";
 
     this._colorMatrixFilter = new ColorMatrixFilter();
     this.value = value;

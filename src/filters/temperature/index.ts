@@ -1,10 +1,13 @@
 //  @ts-ignore
 import fragment from "./fragment.frag";
 import { Filter } from "@pixi/core";
+import { ColorEffectsFilter } from "@/filters/ColorEffectsFilter";
 
-export class Temperature extends Filter {
+export class Temperature extends ColorEffectsFilter {
   constructor(value: number = 0) {
     super(null, fragment);
+    this.effectName = "temperature";
+    this.effectType = "filter";
 
     this.value = value;
   }

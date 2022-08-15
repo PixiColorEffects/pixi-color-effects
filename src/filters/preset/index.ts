@@ -1,20 +1,18 @@
-import {
-  Filter,
-  FilterSystem,
-  RenderTexture,
-  FilterState,
-} from "@pixi/core";
+import { Filter, FilterSystem, RenderTexture, FilterState } from "@pixi/core";
 import { CLEAR_MODES } from "@pixi/constants";
 import { filters } from "../index";
 import { PresetKey, presetConfig } from "./preset";
 import { Curves } from "@/filters/curves";
 import { LevelMapping } from "@/tools/level";
 import { Levels } from "@/filters/levels";
+import { ColorEffectsFilter } from "@/filters/ColorEffectsFilter";
 
-export class Preset extends Filter {
+export class Preset extends ColorEffectsFilter {
   private filtersArr: Filter[] = [];
   constructor(preset: PresetKey) {
     super(null, null);
+    this.effectName = preset;
+    this.effectType = "preset";
 
     this.filtersArr = presetConfig[preset].map((f) => {
       if (f.name === "curves") {
@@ -83,29 +81,29 @@ export class Preset extends Filter {
     for (let i = 0; i < this.filtersArr.length; i++) {
       if (i === 0) {
         this.filtersArr[i].apply(
-            filterManager,
-            input,
-            baseTexture,
-            1,
-            _currentState
+          filterManager,
+          input,
+          baseTexture,
+          1,
+          _currentState
         );
       } else {
         const stackTexture = filterManager.getFilterTexture();
         texturesArr.push(stackTexture);
         this.filtersArr[i].apply(
-            filterManager,
-            texturesArr[i - 1],
-            stackTexture,
-            1
+          filterManager,
+          texturesArr[i - 1],
+          stackTexture,
+          1
         );
       }
     }
 
     filterManager.applyFilter(
-        this,
-        texturesArr[texturesArr.length - 1],
-        output,
-        clearMode
+      this,
+      texturesArr[texturesArr.length - 1],
+      output,
+      clearMode
     );
 
     texturesArr.reverse().map((t) => {

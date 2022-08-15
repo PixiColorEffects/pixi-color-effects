@@ -1,16 +1,18 @@
 import {
-  Filter,
   FilterSystem,
   RenderTexture,
   FilterState,
 } from "@pixi/core";
 import { CLEAR_MODES } from "@pixi/constants";
 import { ColorMatrixFilter } from "@pixi/filter-color-matrix";
+import { ColorEffectsFilter } from "@/filters/ColorEffectsFilter";
 
-export class Brightness extends Filter {
+export class Brightness extends ColorEffectsFilter {
   private _colorMatrixFilter: ColorMatrixFilter;
   constructor(value: number = 0) {
     super(null, null);
+    this.effectName = "brightness";
+    this.effectType = "filter";
 
     this._colorMatrixFilter = new ColorMatrixFilter();
     this.value = value;

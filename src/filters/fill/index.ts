@@ -14,6 +14,7 @@ import { ColorDodge } from "@/filters/fill/colorDodge";
 import { ColorBurn } from "@/filters/fill/colorBurn";
 import { Screen } from "@/filters/fill/screen";
 import { Default } from "@/filters/fill/default";
+import { ColorEffectsFilter } from "@/filters/ColorEffectsFilter";
 
 const fillMode = {
   default: Default,
@@ -29,7 +30,7 @@ const fillMode = {
 
 export type FillModeType = keyof typeof fillMode;
 
-export class Fill<T extends FillModeType> extends Filter {
+export class Fill<T extends FillModeType> extends ColorEffectsFilter {
   private _fillFilter: InstanceType<typeof fillMode[T]>;
   constructor(
     value: number = 0,
@@ -38,6 +39,8 @@ export class Fill<T extends FillModeType> extends Filter {
     mode: T = "softLight"
   ) {
     super(null, null);
+    this.effectName = "fill";
+    this.effectType = "filter";
 
     //  @ts-ignore
     this._fillFilter = new fillMode[mode]();

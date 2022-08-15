@@ -2,8 +2,9 @@
 import fragment from "./fragment.frag";
 import { Filter, Texture } from "@pixi/core";
 import { hex2rgb, string2hex } from "@pixi/utils";
+import { ColorEffectsFilter } from "@/filters/ColorEffectsFilter";
 
-export class Toning extends Filter {
+export class Toning extends ColorEffectsFilter {
   private _imageData: ImageData;
 
   constructor(
@@ -12,6 +13,8 @@ export class Toning extends Filter {
     darkColor: string = "#ff00ff"
   ) {
     super(null, fragment);
+    this.effectName = "toning";
+    this.effectType = "filter";
 
     this._imageData = new ImageData(256, 1);
     this.value = value;

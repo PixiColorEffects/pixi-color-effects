@@ -63,5 +63,9 @@
     "licenseText": "pixi-color-effects is licensed under the MIT License.",
     "copyright": "https://github.com/PixiColorEffects/pixi-color-effects/blob/main/LICENSE",
     "renewAll": true
+  },
+  "dependencies": {
+    "@types/lodash-es": "^4.17.6",
+    "lodash-es": "^4.17.21"
   }
 }

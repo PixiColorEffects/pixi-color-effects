@@ -44,6 +44,21 @@ let filter = new Preset("aladin");
 app.stage.filters = [filter];
 ```
 
+## Methods
+
+### Methods usage
+
+```typescript
+let filter = new Tint();
+
+//  use a method
+filter.getEffectConfig();
+```
+
+| Method          | Argument |                           Description |
+| :-------------- | :------: | ------------------------------------: |
+| getEffectConfig |          | Get the filter's configuration object |
+
 # License
 
 This project is licensed under the MIT License.

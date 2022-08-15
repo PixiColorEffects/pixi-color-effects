@@ -6,12 +6,14 @@ import {
 } from "@pixi/core";
 import { CLEAR_MODES } from "@pixi/constants";
 import { ColorMatrixFilter } from "@pixi/filter-color-matrix";
+import { ColorEffectsFilter } from "@/filters/ColorEffectsFilter";
 
-export class Hue extends Filter {
+export class Hue extends ColorEffectsFilter {
   private _colorMatrixFilter: ColorMatrixFilter;
   constructor(value: number = 0) {
     super(null, null);
-
+    this.effectName = "hue";
+    this.effectType = "filter";
     this._colorMatrixFilter = new ColorMatrixFilter();
     this.value = value;
   }

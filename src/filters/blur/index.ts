@@ -6,12 +6,15 @@ import {
 } from "@pixi/core";
 import { CLEAR_MODES } from '@pixi/constants';
 import { BlurFilter } from '@pixi/filter-blur';
+import { ColorEffectsFilter } from "@/filters/ColorEffectsFilter";
 
-export class Blur extends Filter {
+export class Blur extends ColorEffectsFilter {
   private _blurFilter: any;
 
   constructor(value: number = 0) {
     super(null, null);
+    this.effectName = "blur";
+    this.effectType = "filter";
 
     this._blurFilter = new BlurFilter();
     this.value = value;
